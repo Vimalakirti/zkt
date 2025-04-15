@@ -1,0 +1,1618 @@
+    Blocking waiting for file lock on package cache
+   Compiling zk_torch v0.1.0 (/Users/chenbingjyue/Desktop/UIUC/PR/zk-torch)
+error[E0053]: method `acc_init` has an incompatible type for trait
+   --> src/basic_block/cq.rs:767:3
+    |
+767 | /   fn acc_init(
+768 | |     &self,
+769 | |     _srs: &SRS,
+770 | |     _model: &ArrayD<Data>,
+...   |
+775 | |     _cache: ProveVerifyCache,
+776 | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>) {
+    | |______________________________________________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:206:3
+    |
+206 | /   fn acc_init(
+207 | |     &self,
+208 | |     _srs: &SRS,
+209 | |     _model: &ArrayD<Data>,
+...   |
+214 | |     _cache: ProveVerifyCache,
+215 | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>) {
+    | |_________________________________________________________________________________________________^
+    = note: expected signature `fn(&cq::CQBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, Vec<PairingOutput<Bn<ark_bn254::Config>>>)`
+               found signature `fn(&cq::CQBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)`
+
+error[E0053]: method `acc_prove` has an incompatible type for trait
+   --> src/basic_block/cq.rs:780:3
+    |
+780 | /   fn acc_prove(
+781 | |     &self,
+782 | |     srs: &SRS,
+783 | |     _model: &ArrayD<Data>,
+...   |
+789 | |     _cache: ProveVerifyCache,
+790 | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>) {
+    | |______________________________________________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:220:3
+    |
+220 | /   fn acc_prove(
+221 | |     &self,
+222 | |     _srs: &SRS,
+223 | |     _model: &ArrayD<Data>,
+...   |
+229 | |     _cache: ProveVerifyCache,
+230 | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>) {
+    | |_________________________________________________________________________________________________^
+    = note: expected signature `fn(&cq::CQBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, Vec<PairingOutput<Bn<ark_bn254::Config>>>)`
+               found signature `fn(&cq::CQBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)`
+
+error[E0053]: method `acc_clean` has an incompatible type for trait
+   --> src/basic_block/cq.rs:794:3
+    |
+794 | /   fn acc_clean(
+795 | |     &self,
+796 | |     srs: &SRS,
+797 | |     proof: (&Vec<G1Projective>, &Vec<G2Projective>, &Vec<Fr>),
+798 | |     acc_proof: (&Vec<G1Projective>, &Vec<G2Projective>, &Vec<Fr>),
+799 | |   ) -> ((Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>), (Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>)) {
+    | |_________________________________________________________________________________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:235:3
+    |
+235 | /   fn acc_clean(
+236 | |     &self,
+237 | |     _srs: &SRS,
+238 | |     proof: (&Vec<G1Projective>, &Vec<G2Projective>, &Vec<Fr>),
+239 | |     acc_proof: (&Vec<G1Projective>, &Vec<G2Projective>, &Vec<Fr>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>),
+240 | |   ) -> ((Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>), (Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>)) {
+    | |____________________________________________________________________________________________________________________________________^
+    = note: expected signature `fn(&cq::CQBasicBlock, &basic_block::SRS, (&Vec<_>, &Vec<_>, &Vec<_>), (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>)) -> ((Vec<_>, Vec<_>, Vec<_>), (Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, Vec<PairingOutput<Bn<ark_bn254::Config>>>))`
+               found signature `fn(&cq::CQBasicBlock, &basic_block::SRS, (&Vec<_>, &Vec<_>, &Vec<_>), (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)) -> ((Vec<_>, Vec<_>, Vec<_>), (Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>))`
+
+error[E0053]: method `acc_verify` has an incompatible type for trait
+   --> src/basic_block/cq.rs:803:3
+    |
+803 | /   fn acc_verify(
+804 | |     &self,
+805 | |     _srs: &SRS,
+806 | |     _model: &ArrayD<DataEnc>,
+...   |
+813 | |     _cache: ProveVerifyCache,
+814 | |   ) -> Option<bool> {
+    | |___________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:256:3
+    |
+256 | /   fn acc_verify(
+257 | |     &self,
+258 | |     _srs: &SRS,
+259 | |     _model: &ArrayD<DataEnc>,
+...   |
+266 | |     _cache: ProveVerifyCache,
+267 | |   ) -> Option<bool> {
+    | |___________________^
+    = note: expected signature `fn(&cq::CQBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> std::option::Option<_>`
+               found signature `fn(&cq::CQBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> std::option::Option<_>`
+
+error[E0053]: method `acc_decide` has an incompatible type for trait
+   --> src/basic_block/cq.rs:818:3
+    |
+818 |   fn acc_decide(&self, srs: &SRS, acc_proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>)) -> Vec<PairingCheck> {
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:285:3
+    |
+285 |   fn acc_decide(&self, _srs: &SRS, _acc_proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>)) -> Vec<(PairingCheck, PairingOutput<Bn<ark_bn254::Config>>)...
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    = note: expected signature `fn(&cq::CQBasicBlock, &basic_block::SRS, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>)) -> Vec<(Vec<(ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>, ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>)>, PairingOutput<Bn<ark_bn254::Config>>)>`
+               found signature `fn(&cq::CQBasicBlock, &basic_block::SRS, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)) -> Vec<Vec<(ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>, ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>)>>`
+
+error[E0053]: method `acc_finalize` has an incompatible type for trait
+   --> src/basic_block/cq.rs:824:3
+    |
+824 | /   fn acc_finalize(
+825 | |     &self,
+826 | |     srs: &SRS,
+827 | |     acc_proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>),
+828 | |   ) -> (Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>) {
+    | |_________________________________________________________________________________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:272:3
+    |
+272 | /   fn acc_finalize(
+273 | |     &self,
+274 | |     _srs: &SRS,
+275 | |     acc_proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>),
+276 | |   ) -> (Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>) {
+    | |_________________________________________________________________________________________^
+    = note: expected signature `fn(&cq::CQBasicBlock, &basic_block::SRS, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>)) -> (Vec<_>, Vec<_>, Vec<_>, Vec<_>)`
+               found signature `fn(&cq::CQBasicBlock, &basic_block::SRS, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)) -> (Vec<_>, Vec<_>, Vec<_>, Vec<_>)`
+
+error[E0053]: method `acc_init` has an incompatible type for trait
+   --> src/basic_block/cq2.rs:367:3
+    |
+367 | /   fn acc_init(
+368 | |     &self,
+369 | |     _srs: &SRS,
+370 | |     _model: &ArrayD<Data>,
+...   |
+375 | |     _cache: ProveVerifyCache,
+376 | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>) {
+    | |______________________________________________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:206:3
+    |
+206 | /   fn acc_init(
+207 | |     &self,
+208 | |     _srs: &SRS,
+209 | |     _model: &ArrayD<Data>,
+...   |
+214 | |     _cache: ProveVerifyCache,
+215 | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>) {
+    | |_________________________________________________________________________________________________^
+    = note: expected signature `fn(&cq2::CQ2BasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, Vec<PairingOutput<Bn<ark_bn254::Config>>>)`
+               found signature `fn(&cq2::CQ2BasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)`
+
+error[E0053]: method `acc_prove` has an incompatible type for trait
+   --> src/basic_block/cq2.rs:380:3
+    |
+380 | /   fn acc_prove(
+381 | |     &self,
+382 | |     srs: &SRS,
+383 | |     _model: &ArrayD<Data>,
+...   |
+389 | |     _cache: ProveVerifyCache,
+390 | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>) {
+    | |______________________________________________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:220:3
+    |
+220 | /   fn acc_prove(
+221 | |     &self,
+222 | |     _srs: &SRS,
+223 | |     _model: &ArrayD<Data>,
+...   |
+229 | |     _cache: ProveVerifyCache,
+230 | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>) {
+    | |_________________________________________________________________________________________________^
+    = note: expected signature `fn(&cq2::CQ2BasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, Vec<PairingOutput<Bn<ark_bn254::Config>>>)`
+               found signature `fn(&cq2::CQ2BasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)`
+
+error[E0053]: method `acc_clean` has an incompatible type for trait
+   --> src/basic_block/cq2.rs:394:3
+    |
+394 | /   fn acc_clean(
+395 | |     &self,
+396 | |     srs: &SRS,
+397 | |     proof: (&Vec<G1Projective>, &Vec<G2Projective>, &Vec<Fr>),
+398 | |     acc_proof: (&Vec<G1Projective>, &Vec<G2Projective>, &Vec<Fr>),
+399 | |   ) -> ((Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>), (Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>)) {
+    | |_________________________________________________________________________________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:235:3
+    |
+235 | /   fn acc_clean(
+236 | |     &self,
+237 | |     _srs: &SRS,
+238 | |     proof: (&Vec<G1Projective>, &Vec<G2Projective>, &Vec<Fr>),
+239 | |     acc_proof: (&Vec<G1Projective>, &Vec<G2Projective>, &Vec<Fr>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>),
+240 | |   ) -> ((Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>), (Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>)) {
+    | |____________________________________________________________________________________________________________________________________^
+    = note: expected signature `fn(&cq2::CQ2BasicBlock, &basic_block::SRS, (&Vec<_>, &Vec<_>, &Vec<_>), (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>)) -> ((Vec<_>, Vec<_>, Vec<_>), (Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, Vec<PairingOutput<Bn<ark_bn254::Config>>>))`
+               found signature `fn(&cq2::CQ2BasicBlock, &basic_block::SRS, (&Vec<_>, &Vec<_>, &Vec<_>), (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)) -> ((Vec<_>, Vec<_>, Vec<_>), (Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>))`
+
+error[E0053]: method `acc_verify` has an incompatible type for trait
+   --> src/basic_block/cq2.rs:403:3
+    |
+403 | /   fn acc_verify(
+404 | |     &self,
+405 | |     _srs: &SRS,
+406 | |     _model: &ArrayD<DataEnc>,
+...   |
+413 | |     _cache: ProveVerifyCache,
+414 | |   ) -> Option<bool> {
+    | |___________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:256:3
+    |
+256 | /   fn acc_verify(
+257 | |     &self,
+258 | |     _srs: &SRS,
+259 | |     _model: &ArrayD<DataEnc>,
+...   |
+266 | |     _cache: ProveVerifyCache,
+267 | |   ) -> Option<bool> {
+    | |___________________^
+    = note: expected signature `fn(&cq2::CQ2BasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> std::option::Option<_>`
+               found signature `fn(&cq2::CQ2BasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> std::option::Option<_>`
+
+error[E0053]: method `acc_decide` has an incompatible type for trait
+   --> src/basic_block/cq2.rs:418:3
+    |
+418 |   fn acc_decide(&self, srs: &SRS, acc_proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>)) -> Vec<PairingCheck> {
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:285:3
+    |
+285 |   fn acc_decide(&self, _srs: &SRS, _acc_proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>)) -> Vec<(PairingCheck, PairingOutput<Bn<ark_bn254::Config>>)...
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    = note: expected signature `fn(&cq2::CQ2BasicBlock, &basic_block::SRS, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>)) -> Vec<(Vec<(ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>, ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>)>, PairingOutput<Bn<ark_bn254::Config>>)>`
+               found signature `fn(&cq2::CQ2BasicBlock, &basic_block::SRS, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)) -> Vec<Vec<(ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>, ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>)>>`
+
+error[E0053]: method `acc_finalize` has an incompatible type for trait
+   --> src/basic_block/cq2.rs:424:3
+    |
+424 | /   fn acc_finalize(
+425 | |     &self,
+426 | |     srs: &SRS,
+427 | |     acc_proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>),
+428 | |   ) -> (Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>) {
+    | |_________________________________________________________________________________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:272:3
+    |
+272 | /   fn acc_finalize(
+273 | |     &self,
+274 | |     _srs: &SRS,
+275 | |     acc_proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>),
+276 | |   ) -> (Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>) {
+    | |_________________________________________________________________________________________^
+    = note: expected signature `fn(&cq2::CQ2BasicBlock, &basic_block::SRS, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>)) -> (Vec<_>, Vec<_>, Vec<_>, Vec<_>)`
+               found signature `fn(&cq2::CQ2BasicBlock, &basic_block::SRS, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)) -> (Vec<_>, Vec<_>, Vec<_>, Vec<_>)`
+
+error[E0053]: method `acc_init` has an incompatible type for trait
+   --> src/basic_block/cqlin.rs:462:3
+    |
+462 | /   fn acc_init(
+463 | |     &self,
+464 | |     _srs: &SRS,
+465 | |     model: &ArrayD<Data>,
+...   |
+470 | |     _cache: ProveVerifyCache,
+471 | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>) {
+    | |______________________________________________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:206:3
+    |
+206 | /   fn acc_init(
+207 | |     &self,
+208 | |     _srs: &SRS,
+209 | |     _model: &ArrayD<Data>,
+...   |
+214 | |     _cache: ProveVerifyCache,
+215 | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>) {
+    | |_________________________________________________________________________________________________^
+    = note: expected signature `fn(&cqlin::CQLinBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, Vec<PairingOutput<Bn<ark_bn254::Config>>>)`
+               found signature `fn(&cqlin::CQLinBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)`
+
+error[E0053]: method `acc_prove` has an incompatible type for trait
+   --> src/basic_block/cqlin.rs:497:3
+    |
+497 | /   fn acc_prove(
+498 | |     &self,
+499 | |     srs: &SRS,
+500 | |     model: &ArrayD<Data>,
+...   |
+506 | |     _cache: ProveVerifyCache,
+507 | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>) {
+    | |______________________________________________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:220:3
+    |
+220 | /   fn acc_prove(
+221 | |     &self,
+222 | |     _srs: &SRS,
+223 | |     _model: &ArrayD<Data>,
+...   |
+229 | |     _cache: ProveVerifyCache,
+230 | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>) {
+    | |_________________________________________________________________________________________________^
+    = note: expected signature `fn(&cqlin::CQLinBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, Vec<PairingOutput<Bn<ark_bn254::Config>>>)`
+               found signature `fn(&cqlin::CQLinBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)`
+
+error[E0053]: method `acc_clean` has an incompatible type for trait
+   --> src/basic_block/cqlin.rs:662:3
+    |
+662 | /   fn acc_clean(
+663 | |     &self,
+664 | |     srs: &SRS,
+665 | |     proof: (&Vec<G1Projective>, &Vec<G2Projective>, &Vec<Fr>),
+666 | |     acc_proof: (&Vec<G1Projective>, &Vec<G2Projective>, &Vec<Fr>),
+667 | |   ) -> ((Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>), (Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>)) {
+    | |_________________________________________________________________________________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:235:3
+    |
+235 | /   fn acc_clean(
+236 | |     &self,
+237 | |     _srs: &SRS,
+238 | |     proof: (&Vec<G1Projective>, &Vec<G2Projective>, &Vec<Fr>),
+239 | |     acc_proof: (&Vec<G1Projective>, &Vec<G2Projective>, &Vec<Fr>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>),
+240 | |   ) -> ((Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>), (Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>)) {
+    | |____________________________________________________________________________________________________________________________________^
+    = note: expected signature `fn(&cqlin::CQLinBasicBlock, &basic_block::SRS, (&Vec<_>, &Vec<_>, &Vec<_>), (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>)) -> ((Vec<_>, Vec<_>, Vec<_>), (Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, Vec<PairingOutput<Bn<ark_bn254::Config>>>))`
+               found signature `fn(&cqlin::CQLinBasicBlock, &basic_block::SRS, (&Vec<_>, &Vec<_>, &Vec<_>), (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)) -> ((Vec<_>, Vec<_>, Vec<_>), (Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>))`
+
+error[E0053]: method `acc_verify` has an incompatible type for trait
+   --> src/basic_block/cqlin.rs:702:3
+    |
+702 | /   fn acc_verify(
+703 | |     &self,
+704 | |     _srs: &SRS,
+705 | |     model: &ArrayD<DataEnc>,
+...   |
+712 | |     cache: ProveVerifyCache,
+713 | |   ) -> Option<bool> {
+    | |___________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:256:3
+    |
+256 | /   fn acc_verify(
+257 | |     &self,
+258 | |     _srs: &SRS,
+259 | |     _model: &ArrayD<DataEnc>,
+...   |
+266 | |     _cache: ProveVerifyCache,
+267 | |   ) -> Option<bool> {
+    | |___________________^
+    = note: expected signature `fn(&cqlin::CQLinBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> std::option::Option<_>`
+               found signature `fn(&cqlin::CQLinBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> std::option::Option<_>`
+
+error[E0053]: method `acc_decide` has an incompatible type for trait
+   --> src/basic_block/cqlin.rs:839:3
+    |
+839 |   fn acc_decide(&self, srs: &SRS, acc_proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>)) -> Vec<PairingCheck> {
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:285:3
+    |
+285 |   fn acc_decide(&self, _srs: &SRS, _acc_proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>)) -> Vec<(PairingCheck, PairingOutput<Bn<ark_bn254::Config>>)...
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    = note: expected signature `fn(&cqlin::CQLinBasicBlock, &basic_block::SRS, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>)) -> Vec<(Vec<(ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>, ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>)>, PairingOutput<Bn<ark_bn254::Config>>)>`
+               found signature `fn(&cqlin::CQLinBasicBlock, &basic_block::SRS, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)) -> Vec<Vec<(ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>, ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>)>>`
+
+error[E0053]: method `acc_finalize` has an incompatible type for trait
+   --> src/basic_block/cqlin.rs:910:3
+    |
+910 | /   fn acc_finalize(
+911 | |     &self,
+912 | |     srs: &SRS,
+913 | |     acc_proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>),
+914 | |   ) -> (Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>) {
+    | |_________________________________________________________________________________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:272:3
+    |
+272 | /   fn acc_finalize(
+273 | |     &self,
+274 | |     _srs: &SRS,
+275 | |     acc_proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>),
+276 | |   ) -> (Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>) {
+    | |_________________________________________________________________________________________^
+    = note: expected signature `fn(&cqlin::CQLinBasicBlock, &basic_block::SRS, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>)) -> (Vec<_>, Vec<_>, Vec<_>, Vec<_>)`
+               found signature `fn(&cqlin::CQLinBasicBlock, &basic_block::SRS, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)) -> (Vec<_>, Vec<_>, Vec<_>, Vec<_>)`
+
+error[E0053]: method `acc_init` has an incompatible type for trait
+   --> src/basic_block/matmul.rs:364:3
+    |
+364 | /   fn acc_init(
+365 | |     &self,
+366 | |     _srs: &SRS,
+367 | |     _model: &ArrayD<Data>,
+...   |
+372 | |     _cache: ProveVerifyCache,
+373 | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>) {
+    | |______________________________________________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:206:3
+    |
+206 | /   fn acc_init(
+207 | |     &self,
+208 | |     _srs: &SRS,
+209 | |     _model: &ArrayD<Data>,
+...   |
+214 | |     _cache: ProveVerifyCache,
+215 | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>) {
+    | |_________________________________________________________________________________________________^
+    = note: expected signature `fn(&basic_block::matmul::MatMulBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, Vec<PairingOutput<Bn<ark_bn254::Config>>>)`
+               found signature `fn(&basic_block::matmul::MatMulBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)`
+
+error[E0053]: method `acc_prove` has an incompatible type for trait
+   --> src/basic_block/matmul.rs:395:3
+    |
+395 | /   fn acc_prove(
+396 | |     &self,
+397 | |     srs: &SRS,
+398 | |     _model: &ArrayD<Data>,
+...   |
+404 | |     _cache: ProveVerifyCache,
+405 | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>) {
+    | |______________________________________________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:220:3
+    |
+220 | /   fn acc_prove(
+221 | |     &self,
+222 | |     _srs: &SRS,
+223 | |     _model: &ArrayD<Data>,
+...   |
+229 | |     _cache: ProveVerifyCache,
+230 | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>) {
+    | |_________________________________________________________________________________________________^
+    = note: expected signature `fn(&basic_block::matmul::MatMulBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, Vec<PairingOutput<Bn<ark_bn254::Config>>>)`
+               found signature `fn(&basic_block::matmul::MatMulBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)`
+
+error[E0053]: method `acc_clean` has an incompatible type for trait
+   --> src/basic_block/matmul.rs:505:3
+    |
+505 | /   fn acc_clean(
+506 | |     &self,
+507 | |     srs: &SRS,
+508 | |     proof: (&Vec<G1Projective>, &Vec<G2Projective>, &Vec<Fr>),
+509 | |     acc_proof: (&Vec<G1Projective>, &Vec<G2Projective>, &Vec<Fr>),
+510 | |   ) -> ((Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>), (Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>)) {
+    | |_________________________________________________________________________________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:235:3
+    |
+235 | /   fn acc_clean(
+236 | |     &self,
+237 | |     _srs: &SRS,
+238 | |     proof: (&Vec<G1Projective>, &Vec<G2Projective>, &Vec<Fr>),
+239 | |     acc_proof: (&Vec<G1Projective>, &Vec<G2Projective>, &Vec<Fr>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>),
+240 | |   ) -> ((Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>), (Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>)) {
+    | |____________________________________________________________________________________________________________________________________^
+    = note: expected signature `fn(&basic_block::matmul::MatMulBasicBlock, &basic_block::SRS, (&Vec<_>, &Vec<_>, &Vec<_>), (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>)) -> ((Vec<_>, Vec<_>, Vec<_>), (Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, Vec<PairingOutput<Bn<ark_bn254::Config>>>))`
+               found signature `fn(&basic_block::matmul::MatMulBasicBlock, &basic_block::SRS, (&Vec<_>, &Vec<_>, &Vec<_>), (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)) -> ((Vec<_>, Vec<_>, Vec<_>), (Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>))`
+
+error[E0053]: method `acc_verify` has an incompatible type for trait
+   --> src/basic_block/matmul.rs:539:3
+    |
+539 | /   fn acc_verify(
+540 | |     &self,
+541 | |     srs: &SRS,
+542 | |     _model: &ArrayD<DataEnc>,
+...   |
+549 | |     cache: ProveVerifyCache,
+550 | |   ) -> Option<bool> {
+    | |___________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:256:3
+    |
+256 | /   fn acc_verify(
+257 | |     &self,
+258 | |     _srs: &SRS,
+259 | |     _model: &ArrayD<DataEnc>,
+...   |
+266 | |     _cache: ProveVerifyCache,
+267 | |   ) -> Option<bool> {
+    | |___________________^
+    = note: expected signature `fn(&basic_block::matmul::MatMulBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> std::option::Option<_>`
+               found signature `fn(&basic_block::matmul::MatMulBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> std::option::Option<_>`
+
+error[E0053]: method `acc_decide` has an incompatible type for trait
+   --> src/basic_block/matmul.rs:654:3
+    |
+654 |   fn acc_decide(&self, srs: &SRS, acc_proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>)) -> Vec<PairingCheck> {
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:285:3
+    |
+285 |   fn acc_decide(&self, _srs: &SRS, _acc_proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>)) -> Vec<(PairingCheck, PairingOutput<Bn<ark_bn254::Config>>)...
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    = note: expected signature `fn(&basic_block::matmul::MatMulBasicBlock, &basic_block::SRS, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>)) -> Vec<(Vec<(ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>, ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>)>, PairingOutput<Bn<ark_bn254::Config>>)>`
+               found signature `fn(&basic_block::matmul::MatMulBasicBlock, &basic_block::SRS, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)) -> Vec<Vec<(ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>, ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>)>>`
+
+error[E0053]: method `acc_finalize` has an incompatible type for trait
+   --> src/basic_block/matmul.rs:709:3
+    |
+709 | /   fn acc_finalize(
+710 | |     &self,
+711 | |     srs: &SRS,
+712 | |     acc_proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>),
+713 | |   ) -> (Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>) {
+    | |_________________________________________________________________________________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:272:3
+    |
+272 | /   fn acc_finalize(
+273 | |     &self,
+274 | |     _srs: &SRS,
+275 | |     acc_proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>),
+276 | |   ) -> (Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>) {
+    | |_________________________________________________________________________________________^
+    = note: expected signature `fn(&basic_block::matmul::MatMulBasicBlock, &basic_block::SRS, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>)) -> (Vec<_>, Vec<_>, Vec<_>, Vec<_>)`
+               found signature `fn(&basic_block::matmul::MatMulBasicBlock, &basic_block::SRS, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)) -> (Vec<_>, Vec<_>, Vec<_>, Vec<_>)`
+
+error[E0053]: method `acc_init` has an incompatible type for trait
+   --> src/basic_block/mul.rs:77:3
+    |
+77  | /   fn acc_init(
+78  | |     &self,
+79  | |     _srs: &SRS,
+80  | |     _model: &ArrayD<Data>,
+...   |
+85  | |     _cache: ProveVerifyCache,
+86  | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>) {
+    | |______________________________________________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:206:3
+    |
+206 | /   fn acc_init(
+207 | |     &self,
+208 | |     _srs: &SRS,
+209 | |     _model: &ArrayD<Data>,
+...   |
+214 | |     _cache: ProveVerifyCache,
+215 | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>) {
+    | |_________________________________________________________________________________________________^
+    = note: expected signature `fn(&basic_block::mul::MulConstBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, Vec<PairingOutput<Bn<ark_bn254::Config>>>)`
+               found signature `fn(&basic_block::mul::MulConstBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)`
+
+error[E0053]: method `acc_prove` has an incompatible type for trait
+   --> src/basic_block/mul.rs:99:3
+    |
+99  | /   fn acc_prove(
+100 | |     &self,
+101 | |     _srs: &SRS,
+102 | |     _model: &ArrayD<Data>,
+...   |
+108 | |     _cache: ProveVerifyCache,
+109 | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>) {
+    | |______________________________________________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:220:3
+    |
+220 | /   fn acc_prove(
+221 | |     &self,
+222 | |     _srs: &SRS,
+223 | |     _model: &ArrayD<Data>,
+...   |
+229 | |     _cache: ProveVerifyCache,
+230 | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>) {
+    | |_________________________________________________________________________________________________^
+    = note: expected signature `fn(&basic_block::mul::MulConstBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, Vec<PairingOutput<Bn<ark_bn254::Config>>>)`
+               found signature `fn(&basic_block::mul::MulConstBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)`
+
+error[E0053]: method `acc_verify` has an incompatible type for trait
+   --> src/basic_block/mul.rs:122:3
+    |
+122 | /   fn acc_verify(
+123 | |     &self,
+124 | |     _srs: &SRS,
+125 | |     _model: &ArrayD<DataEnc>,
+...   |
+132 | |     _cache: ProveVerifyCache,
+133 | |   ) -> Option<bool> {
+    | |___________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:256:3
+    |
+256 | /   fn acc_verify(
+257 | |     &self,
+258 | |     _srs: &SRS,
+259 | |     _model: &ArrayD<DataEnc>,
+...   |
+266 | |     _cache: ProveVerifyCache,
+267 | |   ) -> Option<bool> {
+    | |___________________^
+    = note: expected signature `fn(&basic_block::mul::MulConstBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> std::option::Option<_>`
+               found signature `fn(&basic_block::mul::MulConstBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> std::option::Option<_>`
+
+error[E0053]: method `acc_decide` has an incompatible type for trait
+   --> src/basic_block/mul.rs:161:3
+    |
+161 |   fn acc_decide(&self, srs: &SRS, acc_proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>)) -> Vec<PairingCheck> {
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:285:3
+    |
+285 |   fn acc_decide(&self, _srs: &SRS, _acc_proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>)) -> Vec<(PairingCheck, PairingOutput<Bn<ark_bn254::Config>>)...
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    = note: expected signature `fn(&basic_block::mul::MulConstBasicBlock, &basic_block::SRS, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>)) -> Vec<(Vec<(ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>, ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>)>, PairingOutput<Bn<ark_bn254::Config>>)>`
+               found signature `fn(&basic_block::mul::MulConstBasicBlock, &basic_block::SRS, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)) -> Vec<Vec<(ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>, ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>)>>`
+
+error[E0053]: method `acc_init` has an incompatible type for trait
+   --> src/basic_block/mul.rs:267:3
+    |
+267 | /   fn acc_init(
+268 | |     &self,
+269 | |     _srs: &SRS,
+270 | |     _model: &ArrayD<Data>,
+...   |
+275 | |     _cache: ProveVerifyCache,
+276 | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>) {
+    | |______________________________________________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:206:3
+    |
+206 | /   fn acc_init(
+207 | |     &self,
+208 | |     _srs: &SRS,
+209 | |     _model: &ArrayD<Data>,
+...   |
+214 | |     _cache: ProveVerifyCache,
+215 | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>) {
+    | |_________________________________________________________________________________________________^
+    = note: expected signature `fn(&basic_block::mul::MulScalarBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, Vec<PairingOutput<Bn<ark_bn254::Config>>>)`
+               found signature `fn(&basic_block::mul::MulScalarBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)`
+
+error[E0053]: method `acc_prove` has an incompatible type for trait
+   --> src/basic_block/mul.rs:299:3
+    |
+299 | /   fn acc_prove(
+300 | |     &self,
+301 | |     srs: &SRS,
+302 | |     _model: &ArrayD<Data>,
+...   |
+308 | |     _cache: ProveVerifyCache,
+309 | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>) {
+    | |______________________________________________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:220:3
+    |
+220 | /   fn acc_prove(
+221 | |     &self,
+222 | |     _srs: &SRS,
+223 | |     _model: &ArrayD<Data>,
+...   |
+229 | |     _cache: ProveVerifyCache,
+230 | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>) {
+    | |_________________________________________________________________________________________________^
+    = note: expected signature `fn(&basic_block::mul::MulScalarBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, Vec<PairingOutput<Bn<ark_bn254::Config>>>)`
+               found signature `fn(&basic_block::mul::MulScalarBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)`
+
+error[E0053]: method `acc_clean` has an incompatible type for trait
+   --> src/basic_block/mul.rs:399:3
+    |
+399 | /   fn acc_clean(
+400 | |     &self,
+401 | |     srs: &SRS,
+402 | |     proof: (&Vec<G1Projective>, &Vec<G2Projective>, &Vec<Fr>),
+403 | |     acc_proof: (&Vec<G1Projective>, &Vec<G2Projective>, &Vec<Fr>),
+404 | |   ) -> ((Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>), (Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>)) {
+    | |_________________________________________________________________________________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:235:3
+    |
+235 | /   fn acc_clean(
+236 | |     &self,
+237 | |     _srs: &SRS,
+238 | |     proof: (&Vec<G1Projective>, &Vec<G2Projective>, &Vec<Fr>),
+239 | |     acc_proof: (&Vec<G1Projective>, &Vec<G2Projective>, &Vec<Fr>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>),
+240 | |   ) -> ((Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>), (Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>)) {
+    | |____________________________________________________________________________________________________________________________________^
+    = note: expected signature `fn(&basic_block::mul::MulScalarBasicBlock, &basic_block::SRS, (&Vec<_>, &Vec<_>, &Vec<_>), (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>)) -> ((Vec<_>, Vec<_>, Vec<_>), (Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, Vec<PairingOutput<Bn<ark_bn254::Config>>>))`
+               found signature `fn(&basic_block::mul::MulScalarBasicBlock, &basic_block::SRS, (&Vec<_>, &Vec<_>, &Vec<_>), (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)) -> ((Vec<_>, Vec<_>, Vec<_>), (Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>))`
+
+error[E0053]: method `acc_verify` has an incompatible type for trait
+   --> src/basic_block/mul.rs:432:3
+    |
+432 | /   fn acc_verify(
+433 | |     &self,
+434 | |     _srs: &SRS,
+435 | |     _model: &ArrayD<DataEnc>,
+...   |
+442 | |     _cache: ProveVerifyCache,
+443 | |   ) -> Option<bool> {
+    | |___________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:256:3
+    |
+256 | /   fn acc_verify(
+257 | |     &self,
+258 | |     _srs: &SRS,
+259 | |     _model: &ArrayD<DataEnc>,
+...   |
+266 | |     _cache: ProveVerifyCache,
+267 | |   ) -> Option<bool> {
+    | |___________________^
+    = note: expected signature `fn(&basic_block::mul::MulScalarBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> std::option::Option<_>`
+               found signature `fn(&basic_block::mul::MulScalarBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> std::option::Option<_>`
+
+error[E0053]: method `acc_decide` has an incompatible type for trait
+   --> src/basic_block/mul.rs:495:3
+    |
+495 |   fn acc_decide(&self, srs: &SRS, acc_proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>)) -> Vec<PairingCheck> {
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:285:3
+    |
+285 |   fn acc_decide(&self, _srs: &SRS, _acc_proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>)) -> Vec<(PairingCheck, PairingOutput<Bn<ark_bn254::Config>>)...
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    = note: expected signature `fn(&basic_block::mul::MulScalarBasicBlock, &basic_block::SRS, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>)) -> Vec<(Vec<(ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>, ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>)>, PairingOutput<Bn<ark_bn254::Config>>)>`
+               found signature `fn(&basic_block::mul::MulScalarBasicBlock, &basic_block::SRS, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)) -> Vec<Vec<(ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>, ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>)>>`
+
+error[E0053]: method `acc_finalize` has an incompatible type for trait
+   --> src/basic_block/mul.rs:522:3
+    |
+522 | /   fn acc_finalize(
+523 | |     &self,
+524 | |     srs: &SRS,
+525 | |     acc_proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>),
+526 | |   ) -> (Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>) {
+    | |_________________________________________________________________________________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:272:3
+    |
+272 | /   fn acc_finalize(
+273 | |     &self,
+274 | |     _srs: &SRS,
+275 | |     acc_proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>),
+276 | |   ) -> (Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>) {
+    | |_________________________________________________________________________________________^
+    = note: expected signature `fn(&basic_block::mul::MulScalarBasicBlock, &basic_block::SRS, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>)) -> (Vec<_>, Vec<_>, Vec<_>, Vec<_>)`
+               found signature `fn(&basic_block::mul::MulScalarBasicBlock, &basic_block::SRS, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)) -> (Vec<_>, Vec<_>, Vec<_>, Vec<_>)`
+
+error[E0053]: method `acc_init` has an incompatible type for trait
+   --> src/basic_block/mul.rs:652:3
+    |
+652 | /   fn acc_init(
+653 | |     &self,
+654 | |     _srs: &SRS,
+655 | |     _model: &ArrayD<Data>,
+...   |
+660 | |     _cache: ProveVerifyCache,
+661 | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>) {
+    | |______________________________________________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:206:3
+    |
+206 | /   fn acc_init(
+207 | |     &self,
+208 | |     _srs: &SRS,
+209 | |     _model: &ArrayD<Data>,
+...   |
+214 | |     _cache: ProveVerifyCache,
+215 | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>) {
+    | |_________________________________________________________________________________________________^
+    = note: expected signature `fn(&basic_block::mul::MulBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, Vec<PairingOutput<Bn<ark_bn254::Config>>>)`
+               found signature `fn(&basic_block::mul::MulBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)`
+
+error[E0053]: method `acc_prove` has an incompatible type for trait
+   --> src/basic_block/mul.rs:688:3
+    |
+688 | /   fn acc_prove(
+689 | |     &self,
+690 | |     srs: &SRS,
+691 | |     _model: &ArrayD<Data>,
+...   |
+697 | |     _cache: ProveVerifyCache,
+698 | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>) {
+    | |______________________________________________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:220:3
+    |
+220 | /   fn acc_prove(
+221 | |     &self,
+222 | |     _srs: &SRS,
+223 | |     _model: &ArrayD<Data>,
+...   |
+229 | |     _cache: ProveVerifyCache,
+230 | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>) {
+    | |_________________________________________________________________________________________________^
+    = note: expected signature `fn(&basic_block::mul::MulBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, Vec<PairingOutput<Bn<ark_bn254::Config>>>)`
+               found signature `fn(&basic_block::mul::MulBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)`
+
+error[E0053]: method `acc_clean` has an incompatible type for trait
+   --> src/basic_block/mul.rs:793:3
+    |
+793 | /   fn acc_clean(
+794 | |     &self,
+795 | |     srs: &SRS,
+796 | |     proof: (&Vec<G1Projective>, &Vec<G2Projective>, &Vec<Fr>),
+797 | |     acc_proof: (&Vec<G1Projective>, &Vec<G2Projective>, &Vec<Fr>),
+798 | |   ) -> ((Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>), (Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>)) {
+    | |_________________________________________________________________________________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:235:3
+    |
+235 | /   fn acc_clean(
+236 | |     &self,
+237 | |     _srs: &SRS,
+238 | |     proof: (&Vec<G1Projective>, &Vec<G2Projective>, &Vec<Fr>),
+239 | |     acc_proof: (&Vec<G1Projective>, &Vec<G2Projective>, &Vec<Fr>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>),
+240 | |   ) -> ((Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>), (Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>)) {
+    | |____________________________________________________________________________________________________________________________________^
+    = note: expected signature `fn(&basic_block::mul::MulBasicBlock, &basic_block::SRS, (&Vec<_>, &Vec<_>, &Vec<_>), (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>)) -> ((Vec<_>, Vec<_>, Vec<_>), (Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, Vec<PairingOutput<Bn<ark_bn254::Config>>>))`
+               found signature `fn(&basic_block::mul::MulBasicBlock, &basic_block::SRS, (&Vec<_>, &Vec<_>, &Vec<_>), (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)) -> ((Vec<_>, Vec<_>, Vec<_>), (Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>))`
+
+error[E0053]: method `acc_verify` has an incompatible type for trait
+   --> src/basic_block/mul.rs:827:3
+    |
+827 | /   fn acc_verify(
+828 | |     &self,
+829 | |     _srs: &SRS,
+830 | |     _model: &ArrayD<DataEnc>,
+...   |
+837 | |     _cache: ProveVerifyCache,
+838 | |   ) -> Option<bool> {
+    | |___________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:256:3
+    |
+256 | /   fn acc_verify(
+257 | |     &self,
+258 | |     _srs: &SRS,
+259 | |     _model: &ArrayD<DataEnc>,
+...   |
+266 | |     _cache: ProveVerifyCache,
+267 | |   ) -> Option<bool> {
+    | |___________________^
+    = note: expected signature `fn(&basic_block::mul::MulBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> std::option::Option<_>`
+               found signature `fn(&basic_block::mul::MulBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> std::option::Option<_>`
+
+error[E0053]: method `acc_decide` has an incompatible type for trait
+   --> src/basic_block/mul.rs:894:3
+    |
+894 |   fn acc_decide(&self, srs: &SRS, acc_proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>)) -> Vec<PairingCheck> {
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:285:3
+    |
+285 |   fn acc_decide(&self, _srs: &SRS, _acc_proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>)) -> Vec<(PairingCheck, PairingOutput<Bn<ark_bn254::Config>>)...
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    = note: expected signature `fn(&basic_block::mul::MulBasicBlock, &basic_block::SRS, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>)) -> Vec<(Vec<(ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>, ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>)>, PairingOutput<Bn<ark_bn254::Config>>)>`
+               found signature `fn(&basic_block::mul::MulBasicBlock, &basic_block::SRS, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)) -> Vec<Vec<(ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>, ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>)>>`
+
+error[E0053]: method `acc_finalize` has an incompatible type for trait
+   --> src/basic_block/mul.rs:927:3
+    |
+927 | /   fn acc_finalize(
+928 | |     &self,
+929 | |     srs: &SRS,
+930 | |     acc_proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>),
+931 | |   ) -> (Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>) {
+    | |_________________________________________________________________________________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:272:3
+    |
+272 | /   fn acc_finalize(
+273 | |     &self,
+274 | |     _srs: &SRS,
+275 | |     acc_proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>),
+276 | |   ) -> (Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>) {
+    | |_________________________________________________________________________________________^
+    = note: expected signature `fn(&basic_block::mul::MulBasicBlock, &basic_block::SRS, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>)) -> (Vec<_>, Vec<_>, Vec<_>, Vec<_>)`
+               found signature `fn(&basic_block::mul::MulBasicBlock, &basic_block::SRS, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)) -> (Vec<_>, Vec<_>, Vec<_>, Vec<_>)`
+
+error[E0053]: method `acc_init` has an incompatible type for trait
+   --> src/basic_block/permute.rs:328:3
+    |
+328 | /   fn acc_init(
+329 | |     &self,
+330 | |     _srs: &SRS,
+331 | |     _model: &ArrayD<Data>,
+...   |
+336 | |     _cache: ProveVerifyCache,
+337 | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>) {
+    | |______________________________________________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:206:3
+    |
+206 | /   fn acc_init(
+207 | |     &self,
+208 | |     _srs: &SRS,
+209 | |     _model: &ArrayD<Data>,
+...   |
+214 | |     _cache: ProveVerifyCache,
+215 | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>) {
+    | |_________________________________________________________________________________________________^
+    = note: expected signature `fn(&permute::PermuteBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, Vec<PairingOutput<Bn<ark_bn254::Config>>>)`
+               found signature `fn(&permute::PermuteBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)`
+
+error[E0053]: method `acc_prove` has an incompatible type for trait
+   --> src/basic_block/permute.rs:352:3
+    |
+352 | /   fn acc_prove(
+353 | |     &self,
+354 | |     _srs: &SRS,
+355 | |     _model: &ArrayD<Data>,
+...   |
+361 | |     _cache: ProveVerifyCache,
+362 | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>) {
+    | |______________________________________________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:220:3
+    |
+220 | /   fn acc_prove(
+221 | |     &self,
+222 | |     _srs: &SRS,
+223 | |     _model: &ArrayD<Data>,
+...   |
+229 | |     _cache: ProveVerifyCache,
+230 | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>) {
+    | |_________________________________________________________________________________________________^
+    = note: expected signature `fn(&permute::PermuteBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, Vec<PairingOutput<Bn<ark_bn254::Config>>>)`
+               found signature `fn(&permute::PermuteBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)`
+
+error[E0053]: method `acc_clean` has an incompatible type for trait
+   --> src/basic_block/permute.rs:398:3
+    |
+398 | /   fn acc_clean(
+399 | |     &self,
+400 | |     _srs: &SRS,
+401 | |     proof: (&Vec<G1Projective>, &Vec<G2Projective>, &Vec<Fr>),
+402 | |     acc_proof: (&Vec<G1Projective>, &Vec<G2Projective>, &Vec<Fr>),
+403 | |   ) -> ((Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>), (Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>)) {
+    | |_________________________________________________________________________________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:235:3
+    |
+235 | /   fn acc_clean(
+236 | |     &self,
+237 | |     _srs: &SRS,
+238 | |     proof: (&Vec<G1Projective>, &Vec<G2Projective>, &Vec<Fr>),
+239 | |     acc_proof: (&Vec<G1Projective>, &Vec<G2Projective>, &Vec<Fr>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>),
+240 | |   ) -> ((Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>), (Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>)) {
+    | |____________________________________________________________________________________________________________________________________^
+    = note: expected signature `fn(&permute::PermuteBasicBlock, &basic_block::SRS, (&Vec<_>, &Vec<_>, &Vec<_>), (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>)) -> ((Vec<_>, Vec<_>, Vec<_>), (Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, Vec<PairingOutput<Bn<ark_bn254::Config>>>))`
+               found signature `fn(&permute::PermuteBasicBlock, &basic_block::SRS, (&Vec<_>, &Vec<_>, &Vec<_>), (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)) -> ((Vec<_>, Vec<_>, Vec<_>), (Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>))`
+
+error[E0053]: method `acc_verify` has an incompatible type for trait
+   --> src/basic_block/permute.rs:417:3
+    |
+417 | /   fn acc_verify(
+418 | |     &self,
+419 | |     srs: &SRS,
+420 | |     _model: &ArrayD<DataEnc>,
+...   |
+427 | |     cache: ProveVerifyCache,
+428 | |   ) -> Option<bool> {
+    | |___________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:256:3
+    |
+256 | /   fn acc_verify(
+257 | |     &self,
+258 | |     _srs: &SRS,
+259 | |     _model: &ArrayD<DataEnc>,
+...   |
+266 | |     _cache: ProveVerifyCache,
+267 | |   ) -> Option<bool> {
+    | |___________________^
+    = note: expected signature `fn(&permute::PermuteBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> std::option::Option<_>`
+               found signature `fn(&permute::PermuteBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> std::option::Option<_>`
+
+error[E0053]: method `acc_decide` has an incompatible type for trait
+   --> src/basic_block/permute.rs:526:3
+    |
+526 |   fn acc_decide(&self, srs: &SRS, acc_proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>)) -> Vec<PairingCheck> {
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:285:3
+    |
+285 |   fn acc_decide(&self, _srs: &SRS, _acc_proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>)) -> Vec<(PairingCheck, PairingOutput<Bn<ark_bn254::Config>>)...
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    = note: expected signature `fn(&permute::PermuteBasicBlock, &basic_block::SRS, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>)) -> Vec<(Vec<(ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>, ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>)>, PairingOutput<Bn<ark_bn254::Config>>)>`
+               found signature `fn(&permute::PermuteBasicBlock, &basic_block::SRS, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)) -> Vec<Vec<(ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>, ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>)>>`
+
+error[E0053]: method `acc_init` has an incompatible type for trait
+   --> src/basic_block/repeater.rs:281:3
+    |
+281 | /   fn acc_init(
+282 | |     &self,
+283 | |     srs: &SRS,
+284 | |     model: &ArrayD<Data>,
+...   |
+289 | |     cache: ProveVerifyCache,
+290 | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>) {
+    | |______________________________________________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:206:3
+    |
+206 | /   fn acc_init(
+207 | |     &self,
+208 | |     _srs: &SRS,
+209 | |     _model: &ArrayD<Data>,
+...   |
+214 | |     _cache: ProveVerifyCache,
+215 | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>) {
+    | |_________________________________________________________________________________________________^
+    = note: expected signature `fn(&repeater::RepeaterBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, Vec<PairingOutput<Bn<ark_bn254::Config>>>)`
+               found signature `fn(&repeater::RepeaterBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)`
+
+error[E0053]: method `acc_prove` has an incompatible type for trait
+   --> src/basic_block/repeater.rs:336:3
+    |
+336 | /   fn acc_prove(
+337 | |     &self,
+338 | |     srs: &SRS,
+339 | |     model: &ArrayD<Data>,
+...   |
+345 | |     cache: ProveVerifyCache,
+346 | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>) {
+    | |______________________________________________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:220:3
+    |
+220 | /   fn acc_prove(
+221 | |     &self,
+222 | |     _srs: &SRS,
+223 | |     _model: &ArrayD<Data>,
+...   |
+229 | |     _cache: ProveVerifyCache,
+230 | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>) {
+    | |_________________________________________________________________________________________________^
+    = note: expected signature `fn(&repeater::RepeaterBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, Vec<PairingOutput<Bn<ark_bn254::Config>>>)`
+               found signature `fn(&repeater::RepeaterBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)`
+
+error[E0053]: method `acc_clean` has an incompatible type for trait
+   --> src/basic_block/repeater.rs:395:3
+    |
+395 | /   fn acc_clean(
+396 | |     &self,
+397 | |     srs: &SRS,
+398 | |     proof: (&Vec<G1Projective>, &Vec<G2Projective>, &Vec<Fr>),
+399 | |     acc_proof: (&Vec<G1Projective>, &Vec<G2Projective>, &Vec<Fr>),
+400 | |   ) -> ((Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>), (Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>)) {
+    | |_________________________________________________________________________________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:235:3
+    |
+235 | /   fn acc_clean(
+236 | |     &self,
+237 | |     _srs: &SRS,
+238 | |     proof: (&Vec<G1Projective>, &Vec<G2Projective>, &Vec<Fr>),
+239 | |     acc_proof: (&Vec<G1Projective>, &Vec<G2Projective>, &Vec<Fr>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>),
+240 | |   ) -> ((Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>), (Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>)) {
+    | |____________________________________________________________________________________________________________________________________^
+    = note: expected signature `fn(&repeater::RepeaterBasicBlock, &basic_block::SRS, (&Vec<_>, &Vec<_>, &Vec<_>), (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>)) -> ((Vec<_>, Vec<_>, Vec<_>), (Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, Vec<PairingOutput<Bn<ark_bn254::Config>>>))`
+               found signature `fn(&repeater::RepeaterBasicBlock, &basic_block::SRS, (&Vec<_>, &Vec<_>, &Vec<_>), (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)) -> ((Vec<_>, Vec<_>, Vec<_>), (Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>))`
+
+error[E0053]: method `acc_verify` has an incompatible type for trait
+   --> src/basic_block/repeater.rs:458:3
+    |
+458 | /   fn acc_verify(
+459 | |     &self,
+460 | |     srs: &SRS,
+461 | |     model: &ArrayD<DataEnc>,
+...   |
+468 | |     cache: ProveVerifyCache,
+469 | |   ) -> Option<bool> {
+    | |___________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:256:3
+    |
+256 | /   fn acc_verify(
+257 | |     &self,
+258 | |     _srs: &SRS,
+259 | |     _model: &ArrayD<DataEnc>,
+...   |
+266 | |     _cache: ProveVerifyCache,
+267 | |   ) -> Option<bool> {
+    | |___________________^
+    = note: expected signature `fn(&repeater::RepeaterBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> std::option::Option<_>`
+               found signature `fn(&repeater::RepeaterBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> std::option::Option<_>`
+
+error[E0053]: method `acc_finalize` has an incompatible type for trait
+   --> src/basic_block/repeater.rs:532:3
+    |
+532 | /   fn acc_finalize(
+533 | |     &self,
+534 | |     srs: &SRS,
+535 | |     acc_proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>),
+536 | |   ) -> (Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>) {
+    | |_________________________________________________________________________________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:272:3
+    |
+272 | /   fn acc_finalize(
+273 | |     &self,
+274 | |     _srs: &SRS,
+275 | |     acc_proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>),
+276 | |   ) -> (Vec<G1Affine>, Vec<G2Affine>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>) {
+    | |_________________________________________________________________________________________^
+    = note: expected signature `fn(&repeater::RepeaterBasicBlock, &basic_block::SRS, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>)) -> (Vec<_>, Vec<_>, Vec<_>, Vec<_>)`
+               found signature `fn(&repeater::RepeaterBasicBlock, &basic_block::SRS, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)) -> (Vec<_>, Vec<_>, Vec<_>, Vec<_>)`
+
+error[E0053]: method `acc_decide` has an incompatible type for trait
+   --> src/basic_block/repeater.rs:547:3
+    |
+547 |   fn acc_decide(&self, srs: &SRS, acc_proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>)) -> Vec<PairingCheck> {
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:285:3
+    |
+285 |   fn acc_decide(&self, _srs: &SRS, _acc_proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>)) -> Vec<(PairingCheck, PairingOutput<Bn<ark_bn254::Config>>)...
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    = note: expected signature `fn(&repeater::RepeaterBasicBlock, &basic_block::SRS, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>)) -> Vec<(Vec<(ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>, ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>)>, PairingOutput<Bn<ark_bn254::Config>>)>`
+               found signature `fn(&repeater::RepeaterBasicBlock, &basic_block::SRS, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)) -> Vec<Vec<(ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>, ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>)>>`
+
+error[E0053]: method `acc_init` has an incompatible type for trait
+   --> src/basic_block/sum.rs:92:3
+    |
+92  | /   fn acc_init(
+93  | |     &self,
+94  | |     _srs: &SRS,
+95  | |     _model: &ArrayD<Data>,
+...   |
+100 | |     _cache: ProveVerifyCache,
+101 | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>) {
+    | |______________________________________________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:206:3
+    |
+206 | /   fn acc_init(
+207 | |     &self,
+208 | |     _srs: &SRS,
+209 | |     _model: &ArrayD<Data>,
+...   |
+214 | |     _cache: ProveVerifyCache,
+215 | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>) {
+    | |_________________________________________________________________________________________________^
+    = note: expected signature `fn(&basic_block::sum::SumBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, Vec<PairingOutput<Bn<ark_bn254::Config>>>)`
+               found signature `fn(&basic_block::sum::SumBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)`
+
+error[E0053]: method `acc_prove` has an incompatible type for trait
+   --> src/basic_block/sum.rs:114:3
+    |
+114 | /   fn acc_prove(
+115 | |     &self,
+116 | |     _srs: &SRS,
+117 | |     _model: &ArrayD<Data>,
+...   |
+123 | |     _cache: ProveVerifyCache,
+124 | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>) {
+    | |______________________________________________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:220:3
+    |
+220 | /   fn acc_prove(
+221 | |     &self,
+222 | |     _srs: &SRS,
+223 | |     _model: &ArrayD<Data>,
+...   |
+229 | |     _cache: ProveVerifyCache,
+230 | |   ) -> (Vec<G1Projective>, Vec<G2Projective>, Vec<Fr>, Vec<PairingOutput<Bn<ark_bn254::Config>>>) {
+    | |_________________________________________________________________________________________________^
+    = note: expected signature `fn(&basic_block::sum::SumBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, Vec<PairingOutput<Bn<ark_bn254::Config>>>)`
+               found signature `fn(&basic_block::sum::SumBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), (&Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), &mut StdRng, Arc<_>) -> (Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g1::Config>>, Vec<ark_ec::short_weierstrass::Projective<ark_bn254::g2::Config>>, Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)`
+
+error[E0053]: method `acc_verify` has an incompatible type for trait
+   --> src/basic_block/sum.rs:137:3
+    |
+137 | /   fn acc_verify(
+138 | |     &self,
+139 | |     _srs: &SRS,
+140 | |     _model: &ArrayD<DataEnc>,
+...   |
+147 | |     _cache: ProveVerifyCache,
+148 | |   ) -> Option<bool> {
+    | |___________________^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:256:3
+    |
+256 | /   fn acc_verify(
+257 | |     &self,
+258 | |     _srs: &SRS,
+259 | |     _model: &ArrayD<DataEnc>,
+...   |
+266 | |     _cache: ProveVerifyCache,
+267 | |   ) -> Option<bool> {
+    | |___________________^
+    = note: expected signature `fn(&basic_block::sum::SumBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>), (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> std::option::Option<_>`
+               found signature `fn(&basic_block::sum::SumBasicBlock, &basic_block::SRS, &ArrayBase<_, _>, &Vec<&ArrayBase<_, _>>, &Vec<&ArrayBase<_, _>>, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>), (&Vec<_>, &Vec<_>, &Vec<_>), &mut StdRng, Arc<_>) -> std::option::Option<_>`
+
+error[E0053]: method `acc_decide` has an incompatible type for trait
+   --> src/basic_block/sum.rs:176:3
+    |
+176 |   fn acc_decide(&self, srs: &SRS, acc_proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>)) -> Vec<PairingCheck> {
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected a tuple with 4 elements, found one with 3 elements
+    |
+note: type in trait
+   --> src/basic_block.rs:285:3
+    |
+285 |   fn acc_decide(&self, _srs: &SRS, _acc_proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>)) -> Vec<(PairingCheck, PairingOutput<Bn<ark_bn254::Config>>)...
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    = note: expected signature `fn(&basic_block::sum::SumBasicBlock, &basic_block::SRS, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>)) -> Vec<(Vec<(ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>, ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>)>, PairingOutput<Bn<ark_bn254::Config>>)>`
+               found signature `fn(&basic_block::sum::SumBasicBlock, &basic_block::SRS, (&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)) -> Vec<Vec<(ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>, ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>)>>`
+
+error[E0308]: arguments to this method are incorrect
+   --> src/basic_block/repeater.rs:321:26
+    |
+321 |         self.basic_block.acc_prove(srs, model, &localInputs, &localOutputs, localAccProof, localProof, &mut rng, cache.clone())
+    |                          ^^^^^^^^^
+    |
+note: expected a tuple with 4 elements, found one with 3 elements
+   --> src/basic_block/repeater.rs:321:77
+    |
+321 |         self.basic_block.acc_prove(srs, model, &localInputs, &localOutputs, localAccProof, localProof, &mut rng, cache.clone())
+    |                                                                             ^^^^^^^^^^^^^
+    = note: expected tuple `(&Vec<Projective<Config>>, &Vec<Projective<Config>>, &Vec<Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<...>)`
+               found tuple `(&Vec<_>, &Vec<_>, &Vec<_>)`
+note: expected a tuple with 4 elements, found one with 3 elements
+   --> src/basic_block/repeater.rs:321:92
+    |
+321 |         self.basic_block.acc_prove(srs, model, &localInputs, &localOutputs, localAccProof, localProof, &mut rng, cache.clone())
+    |                                                                                            ^^^^^^^^^^
+    = note: expected tuple `(&Vec<Projective<Config>>, &Vec<Projective<Config>>, &Vec<Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<...>)`
+               found tuple `(&Vec<Projective<Config>>, &Vec<Projective<Config>>, &Vec<Fp<MontBackend<FrConfig, 4>, 4>>)`
+note: method defined here
+   --> src/basic_block.rs:220:6
+    |
+220 |   fn acc_prove(
+    |      ^^^^^^^^^
+221 |     &self,
+222 |     _srs: &SRS,
+    |     ----------
+223 |     _model: &ArrayD<Data>,
+    |     ---------------------
+224 |     _inputs: &Vec<&ArrayD<Data>>,
+    |     ----------------------------
+225 |     _outputs: &Vec<&ArrayD<Data>>,
+    |     -----------------------------
+226 |     _acc_proof_1: (&Vec<G1Projective>, &Vec<G2Projective>, &Vec<Fr>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>),
+    |     ------------------------------------------------------------------------------------------------------------
+227 |     _acc_proof_2: (&Vec<G1Projective>, &Vec<G2Projective>, &Vec<Fr>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>),
+    |     ------------------------------------------------------------------------------------------------------------
+228 |     _rng: &mut StdRng,
+    |     -----------------
+229 |     _cache: ProveVerifyCache,
+    |     ------------------------
+
+error[E0308]: mismatched types
+   --> src/basic_block/repeater.rs:324:12
+    |
+324 |       *x = tmp;
+    |            ^^^ expected a tuple with 3 elements, found one with 4 elements
+    |
+    = note: expected tuple `(Vec<_>, Vec<_>, Vec<_>)`
+               found tuple `(Vec<Projective<Config>>, Vec<Projective<Config>>, Vec<Fp<MontBackend<FrConfig, 4>, 4>>, Vec<...>)`
+
+error[E0308]: arguments to this method are incorrect
+   --> src/basic_block/repeater.rs:380:34
+    |
+380 |       let tmp = self.basic_block.acc_prove(srs, model, &localInputs, &localOutputs, localAccProof, localProof, &mut rng, cache.clone());
+    |                                  ^^^^^^^^^
+    |
+note: expected a tuple with 4 elements, found one with 3 elements
+   --> src/basic_block/repeater.rs:380:85
+    |
+380 |       let tmp = self.basic_block.acc_prove(srs, model, &localInputs, &localOutputs, localAccProof, localProof, &mut rng, cache.clone());
+    |                                                                                     ^^^^^^^^^^^^^
+    = note: expected tuple `(&Vec<Projective<Config>>, &Vec<Projective<Config>>, &Vec<Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<...>)`
+               found tuple `(&Vec<Projective<Config>>, &Vec<Projective<Config>>, &Vec<Fp<MontBackend<FrConfig, 4>, 4>>)`
+note: expected a tuple with 4 elements, found one with 3 elements
+   --> src/basic_block/repeater.rs:380:100
+    |
+380 |       let tmp = self.basic_block.acc_prove(srs, model, &localInputs, &localOutputs, localAccProof, localProof, &mut rng, cache.clone());
+    |                                                                                                    ^^^^^^^^^^
+    = note: expected tuple `(&Vec<Projective<Config>>, &Vec<Projective<Config>>, &Vec<Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<...>)`
+               found tuple `(&Vec<Projective<Config>>, &Vec<Projective<Config>>, &Vec<Fp<MontBackend<FrConfig, 4>, 4>>)`
+note: method defined here
+   --> src/basic_block.rs:220:6
+    |
+220 |   fn acc_prove(
+    |      ^^^^^^^^^
+221 |     &self,
+222 |     _srs: &SRS,
+    |     ----------
+223 |     _model: &ArrayD<Data>,
+    |     ---------------------
+224 |     _inputs: &Vec<&ArrayD<Data>>,
+    |     ----------------------------
+225 |     _outputs: &Vec<&ArrayD<Data>>,
+    |     -----------------------------
+226 |     _acc_proof_1: (&Vec<G1Projective>, &Vec<G2Projective>, &Vec<Fr>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>),
+    |     ------------------------------------------------------------------------------------------------------------
+227 |     _acc_proof_2: (&Vec<G1Projective>, &Vec<G2Projective>, &Vec<Fr>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>),
+    |     ------------------------------------------------------------------------------------------------------------
+228 |     _rng: &mut StdRng,
+    |     -----------------
+229 |     _cache: ProveVerifyCache,
+    |     ------------------------
+
+error[E0308]: mismatched types
+   --> src/basic_block/repeater.rs:382:12
+    |
+382 |       *x = tmp;
+    |            ^^^ expected a tuple with 3 elements, found one with 4 elements
+    |
+    = note: expected tuple `(Vec<_>, Vec<_>, Vec<_>)`
+               found tuple `(Vec<Projective<Config>>, Vec<Projective<Config>>, Vec<Fp<MontBackend<FrConfig, 4>, 4>>, Vec<...>)`
+
+error[E0308]: mismatched types
+   --> src/basic_block/repeater.rs:438:9
+    |
+435 |       let (p, acc_p) = self.basic_block.acc_clean(
+    |                                         --------- arguments to this method are incorrect
+...
+438 |         (&localAccProof.0, &localAccProof.1, &localAccProof.2),
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected a tuple with 4 elements, found one with 3 elements
+    |
+    = note: expected tuple `(&Vec<Projective<Config>>, &Vec<Projective<Config>>, &Vec<Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<...>)`
+               found tuple `(&Vec<Projective<Config>>, &Vec<Projective<Config>>, &Vec<Fp<MontBackend<FrConfig, 4>, 4>>)`
+note: method defined here
+   --> src/basic_block.rs:235:6
+    |
+235 |   fn acc_clean(
+    |      ^^^^^^^^^
+...
+239 |     acc_proof: (&Vec<G1Projective>, &Vec<G2Projective>, &Vec<Fr>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>),
+    |     ---------------------------------------------------------------------------------------------------------
+
+error[E0308]: mismatched types
+   --> src/basic_block/repeater.rs:444:50
+    |
+444 |     let acc_combined: (Vec<_>, Vec<_>, Vec<_>) = multiunzip(acc_combined.into_iter());
+    |                       ------------------------   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected a tuple with 3 elements, found one with 4 elements
+    |                       |
+    |                       expected due to this
+    |
+    = note: expected tuple `(Vec<_>, Vec<_>, Vec<_>)`
+               found tuple `(_, _, _, _)`
+
+error[E0308]: arguments to this method are incorrect
+   --> src/basic_block/repeater.rs:520:32
+    |
+520 |       let v = self.basic_block.acc_verify(srs, model, &localInputs, &localOutputs,
+    |                                ^^^^^^^^^^
+    |
+note: expected a tuple with 4 elements, found one with 3 elements
+   --> src/basic_block/repeater.rs:521:9
+    |
+521 |         (&localPrevAccProof.0, &localPrevAccProof.1, &localPrevAccProof.2),
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    = note: expected tuple `(&Vec<Affine<Config>>, &Vec<Affine<Config>>, &Vec<Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<...>>)`
+               found tuple `(&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)`
+note: expected a tuple with 4 elements, found one with 3 elements
+   --> src/basic_block/repeater.rs:522:9
+    |
+522 |         (&localAccProof.0, &localAccProof.1, &localAccProof.2),
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    = note: expected tuple `(&Vec<Affine<Config>>, &Vec<Affine<Config>>, &Vec<Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<...>>)`
+               found tuple `(&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)`
+note: method defined here
+   --> src/basic_block.rs:256:6
+    |
+256 |   fn acc_verify(
+    |      ^^^^^^^^^^
+257 |     &self,
+258 |     _srs: &SRS,
+    |     ----------
+259 |     _model: &ArrayD<DataEnc>,
+    |     ------------------------
+260 |     _inputs: &Vec<&ArrayD<DataEnc>>,
+    |     -------------------------------
+261 |     _outputs: &Vec<&ArrayD<DataEnc>>,
+    |     --------------------------------
+262 |     _prev_acc_proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>),
+    |     -------------------------------------------------------------------------------------------------------
+263 |     _acc_proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>),
+    |     --------------------------------------------------------------------------------------------------
+264 |     _proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>),
+    |     --------------------------------------------------
+265 |     _rng: &mut StdRng,
+    |     -----------------
+266 |     _cache: ProveVerifyCache,
+    |     ------------------------
+
+error[E0308]: mismatched types
+   --> src/basic_block/repeater.rs:544:40
+    |
+544 |     self.basic_block.acc_finalize(srs, (&localAccProof.0, &localAccProof.1, &localAccProof.2))
+    |                      ------------      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected a tuple with 4 elements, found one with 3 elements
+    |                      |
+    |                      arguments to this method are incorrect
+    |
+    = note: expected tuple `(&Vec<Affine<Config>>, &Vec<Affine<Config>>, &Vec<Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<...>>)`
+               found tuple `(&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)`
+note: method defined here
+   --> src/basic_block.rs:272:6
+    |
+272 |   fn acc_finalize(
+    |      ^^^^^^^^^^^^
+...
+275 |     acc_proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>),
+    |     -------------------------------------------------------------------------------------------------
+
+error[E0308]: mismatched types
+   --> src/basic_block/repeater.rs:555:38
+    |
+555 |     self.basic_block.acc_decide(srs, (&acc_proof.0, &acc_proof.1, &acc_proof.2))
+    |                      ----------      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected a tuple with 4 elements, found one with 3 elements
+    |                      |
+    |                      arguments to this method are incorrect
+    |
+    = note: expected tuple `(&Vec<Affine<Config>>, &Vec<Affine<Config>>, &Vec<Fp<MontBackend<FrConfig, 4>, 4>>, &Vec<PairingOutput<...>>)`
+               found tuple `(&Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>>, &Vec<ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>>, &Vec<ark_ff::Fp<MontBackend<FrConfig, 4>, 4>>)`
+note: method defined here
+   --> src/basic_block.rs:285:6
+    |
+285 |   fn acc_decide(&self, _srs: &SRS, _acc_proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>, &Vec<PairingOutput<Bn<ark_bn254::Config>>>)) ->...
+    |      ^^^^^^^^^^                    --------------------------------------------------------------------------------------------------
+
+error[E0308]: mismatched types
+   --> src/basic_block/repeater.rs:555:5
+    |
+547 |   fn acc_decide(&self, srs: &SRS, acc_proof: (&Vec<G1Affine>, &Vec<G2Affine>, &Vec<Fr>)) -> Vec<PairingCheck> {
+    |                                                                                             ----------------- expected `Vec<Vec<(ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>, ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>)>>` because of return type
+...
+555 |     self.basic_block.acc_decide(srs, (&acc_proof.0, &acc_proof.1, &acc_proof.2))
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected `Vec<Vec<(Affine<Config>, ...)>>`, found `Vec<(Vec<(Affine<...>, ...)>, ...)>`
+    |
+    = note: expected struct `Vec<Vec<(ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>, ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>)>>`
+               found struct `Vec<(Vec<(ark_ec::short_weierstrass::Affine<ark_bn254::g1::Config>, ark_ec::short_weierstrass::Affine<ark_bn254::g2::Config>)>, PairingOutput<Bn<ark_bn254::Config>>)>`
+
+warning: variable does not need to be mutable
+   --> src/basic_block/cq.rs:666:9
+    |
+666 |     let mut fr: Vec<Fr> = vec![beta];
+    |         ----^^
+    |         |
+    |         help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` on by default
+
+warning: variable does not need to be mutable
+   --> src/basic_block/cq2.rs:259:9
+    |
+259 |     let mut fr: Vec<Fr> = vec![beta];
+    |         ----^^
+    |         |
+    |         help: remove this `mut`
+
+warning: variable does not need to be mutable
+   --> src/basic_block/matmul.rs:211:9
+    |
+211 |     let mut proof2 = vec![flat_B_g2];
+    |         ----^^^^^^
+    |         |
+    |         help: remove this `mut`
+
+warning: variable does not need to be mutable
+   --> src/basic_block/matmul.rs:212:9
+    |
+212 |     let mut fr = vec![];
+    |         ----^^
+    |         |
+    |         help: remove this `mut`
+
+warning: variable does not need to be mutable
+  --> src/basic_block/mul.rs:47:9
+   |
+47 |     let mut proof = vec![C];
+   |         ----^^^^^
+   |         |
+   |         help: remove this `mut`
+
+warning: variable does not need to be mutable
+   --> src/basic_block/mul.rs:229:9
+    |
+229 |     let mut proof = vec![C];
+    |         ----^^^^^
+    |         |
+    |         help: remove this `mut`
+
+warning: variable does not need to be mutable
+   --> src/basic_block/mul.rs:230:9
+    |
+230 |     let mut fr = vec![];
+    |         ----^^
+    |         |
+    |         help: remove this `mut`
+
+warning: variable does not need to be mutable
+   --> src/basic_block/mul.rs:618:9
+    |
+618 |     let mut proof = vec![tx, C];
+    |         ----^^^^^
+    |         |
+    |         help: remove this `mut`
+
+warning: variable does not need to be mutable
+   --> src/basic_block/permute.rs:169:9
+    |
+169 |     let mut proof2 = vec![];
+    |         ----^^^^^^
+    |         |
+    |         help: remove this `mut`
+
+warning: variable does not need to be mutable
+  --> src/basic_block/sum.rs:58:9
+   |
+58 |     let mut proof = vec![zero_div, C];
+   |         ----^^^^^
+   |         |
+   |         help: remove this `mut`
+
+warning: unused variable: `eq`
+   --> src/layer/new_maxpool.rs:240:9
+    |
+240 |     let eq = graph.addBB(Box::new(RepeaterBasicBlock {
+    |         ^^ help: if this is intentional, prefix it with an underscore: `_eq`
+    |
+    = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `const_ones_output`
+   --> src/layer/new_maxpool.rs:249:9
+    |
+249 |     let const_ones_output = graph.addNode(const_ones, vec![]);
+    |         ^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_const_ones_output`
+
+warning: unused variable: `add_output`
+   --> src/layer/new_maxpool.rs:250:9
+    |
+250 |     let add_output = graph.addNode(multi_add, (0..k).map(|x| (maxpool_selector_output, x)).collect());
+    |         ^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_add_output`
+
+warning: value assigned to `epsilon` is never read
+  --> src/layer/norm.rs:53:13
+   |
+53 |     let mut epsilon = if let Some(x) = epsilon_attr {
+   |             ^^^^^^^
+   |
+   = help: maybe it is overwritten before being read?
+   = note: `#[warn(unused_assignments)]` on by default
+
+warning: value assigned to `epsilon` is never read
+   --> src/layer/norm.rs:626:13
+    |
+626 |     let mut epsilon = if let Some(x) = epsilon_attr {
+    |             ^^^^^^^
+    |
+    = help: maybe it is overwritten before being read?
+
+Some errors have detailed explanations: E0053, E0308.
+For more information about an error, try `rustc --explain E0053`.
+warning: `zk_torch` (lib) generated 15 warnings
+error: could not compile `zk_torch` (lib) due to 65 previous errors; 15 warnings emitted
